@@ -53,7 +53,7 @@
         data-chapter-title="Running A Job"
         data-filepath="running_a_job.md"
         data-basepath="."
-        data-revision="Wed Jan 06 2016 01:18:17 GMT-0500 (EST)"
+        data-revision="Wed Jan 06 2016 01:46:26 GMT-0500 (EST)"
         data-innerlanguage="">
     
 
@@ -166,8 +166,9 @@ a mpi program to executing it on SLURM compute nodes.</p>
 <h3 id="write-your-first-mpi-program-hello-world">Write your first mpi program &quot;Hello World!&quot;</h3>
 <p>First of all, create your work directory:</p>
 <pre><code class="lang-bash">mkdir ~/mpi_hello
+<span class="hljs-built_in">cd</span> ~/mpi_hello
 </code></pre>
-<p>Open a new file named <code>mpi_hello_world.c</code> and edit it like this:</p>
+<p>Then, open a new file called <code>mpi_hello_world.c</code>, and edit it like this:</p>
 <pre><code class="lang-c"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;mpi.h&gt;</span></span>
 <span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
 
@@ -198,7 +199,7 @@ a mpi program to executing it on SLURM compute nodes.</p>
 }
 </code></pre>
 <h3 id="write-your-job-script">Write your job script</h3>
-<p>Open a new file called <code>hello_world.script</code> and edit it like this:</p>
+<p>Open a new file called <code>hello_world.script</code>, and edit it like this:</p>
 <pre><code class="lang-sh"><span class="hljs-shebang">#!/bin/sh</span>
 <span class="hljs-comment">#SBATCH -J MPI_HELLO</span>
 <span class="hljs-comment">#SBATCH -o MPI_HELLO.%J.stdout</span>
@@ -229,7 +230,7 @@ the binary file as <code>mpi_hello_world</code>.</li>
 <li><code>mpirun -n 48 ./mpi_hello_world</code> - Eexecute it with 48 cores. Each node has 24 cores,
 so the total becomes 48.</li>
 </ul>
-<h3 id="run-your-job">Run your job</h3>
+<h3 id="run-your-first-job">Run your first job</h3>
 <p>Running a job is like this:</p>
 <pre><code class="lang-bash">module load openmpi
 sbatch hello_world.script
@@ -237,11 +238,14 @@ sbatch hello_world.script
 <p>You can check your job status with:</p>
 <pre><code class="lang-bash">squeue
 </code></pre>
-<p>Once the job is done, you have two files, <code>MPI_HELLO.&lt;job id&gt;.stdout</code> and <code>MPI_HELLO.&lt;job id&gt;.stderr</code>, so
-take a look at the files like this:</p>
+<p>Once your job is done, there should be two files created, <code>MPI_HELLO.&lt;job id&gt;.stdout</code> and
+<code>MPI_HELLO.&lt;job id&gt;.stderr</code>, so take a look at the files like this:</p>
 <pre><code class="lang-bash">less MPI_HELLO.&lt;job id&gt;.stdout
 less MPI_HELLO.&lt;job id&gt;.stderr
 </code></pre>
+<p>To exit the viewer, you need to hit the <code>q</code> key.</p>
+<p>If everything&apos;s done correctly, you should find 48 lines of &quot;Hello world from processor
+[node name], rank [number] out of 48 processors,&quot; and nothing&apos;s <code>MPI_HELLO.&lt;job id&gt;.stderr</code> file.</p>
 
                     
                     </section>
