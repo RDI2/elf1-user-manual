@@ -9,9 +9,10 @@ First of all, create your work directory:
 
 ```bash
 mkdir ~/mpi_hello
+cd ~/mpi_hello
 ```
 
-Open a new file named `mpi_hello_world.c` and edit it like this:
+Then, open a new file called `mpi_hello_world.c`, and edit it like this:
 
 ```c
 #include <mpi.h>
@@ -46,7 +47,7 @@ int main(int argc, char** argv) {
 
 ### Write your job script
 
-Open a new file called `hello_world.script` and edit it like this:
+Open a new file called `hello_world.script`, and edit it like this:
 
 ```sh
 #!/bin/sh
@@ -80,7 +81,7 @@ The follows are the brief explanations about the lines.
 - `mpirun -n 48 ./mpi_hello_world` - Eexecute it with 48 cores. Each node has 24 cores,
   so the total becomes 48.
 
-### Run your job
+### Run your first job
 
 Running a job is like this:
 
@@ -95,10 +96,15 @@ You can check your job status with:
 squeue
 ```
 
-Once the job is done, you have two files, `MPI_HELLO.<job id>.stdout` and `MPI_HELLO.<job id>.stderr`, so
-take a look at the files like this:
+Once your job is done, there should be two files created, `MPI_HELLO.<job id>.stdout` and
+`MPI_HELLO.<job id>.stderr`, so take a look at the files like this:
 
 ```bash
 less MPI_HELLO.<job id>.stdout
 less MPI_HELLO.<job id>.stderr
 ```
+
+To exit the viewer, you need to hit the `q` key.
+
+If everything's done correctly, you should find 48 lines of "Hello world from processor
+[node name], rank [number] out of 48 processors," and nothing's `MPI_HELLO.<job id>.stderr` file.
