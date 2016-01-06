@@ -1,5 +1,4 @@
 # Using Nodes Interactively
-=============================
 
 You can get access to the SLURM compute nodes interactively.
 
