@@ -107,4 +107,5 @@ less MPI_HELLO.<job id>.stderr
 To exit the viewer, you need to hit the `q` key.
 
 If everything's done correctly, you should find 48 lines of "Hello world from processor
-[node name], rank [number] out of 48 processors," and nothing's `MPI_HELLO.<job id>.stderr` file.
+[node name], rank [number] out of 48 processors" on `MPI_HELLO.<job id>.stdout`,
+and nothing's on `MPI_HELLO.<job id>.stderr` file.
