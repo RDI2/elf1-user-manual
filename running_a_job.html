@@ -53,7 +53,7 @@
         data-chapter-title="Running A Job"
         data-filepath="running_a_job.md"
         data-basepath="."
-        data-revision="Sun Jan 03 2016 22:04:59 GMT-0500 (EST)"
+        data-revision="Wed Jan 06 2016 01:18:17 GMT-0500 (EST)"
         data-innerlanguage="">
     
 
@@ -161,7 +161,87 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="running-a-job">Running A Job</h1>
-<p>TBD</p>
+<p>This section explains how to run a job by showing an example from making
+a mpi program to executing it on SLURM compute nodes.</p>
+<h3 id="write-your-first-mpi-program-hello-world">Write your first mpi program &quot;Hello World!&quot;</h3>
+<p>First of all, create your work directory:</p>
+<pre><code class="lang-bash">mkdir ~/mpi_hello
+</code></pre>
+<p>Open a new file named <code>mpi_hello_world.c</code> and edit it like this:</p>
+<pre><code class="lang-c"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;mpi.h&gt;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span>** argv)</span> </span>{
+    <span class="hljs-comment">// Initialize the MPI environment</span>
+    MPI_Init(<span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+
+    <span class="hljs-comment">// Get the number of processes</span>
+    <span class="hljs-keyword">int</span> world_size;
+    MPI_Comm_size(MPI_COMM_WORLD, &amp;world_size);
+
+    <span class="hljs-comment">// Get the rank of the process</span>
+    <span class="hljs-keyword">int</span> world_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &amp;world_rank);
+
+    <span class="hljs-comment">// Get the name of the processor</span>
+    <span class="hljs-keyword">char</span> processor_name[MPI_MAX_PROCESSOR_NAME];
+    <span class="hljs-keyword">int</span> name_len;
+    MPI_Get_processor_name(processor_name, &amp;name_len);
+
+    <span class="hljs-comment">// Print off a hello world message</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello world from processor %s, rank %d&quot;</span>
+           <span class="hljs-string">&quot; out of %d processors\n&quot;</span>,
+           processor_name, world_rank, world_size);
+
+    <span class="hljs-comment">// Finalize the MPI environment.</span>
+    MPI_Finalize();
+}
+</code></pre>
+<h3 id="write-your-job-script">Write your job script</h3>
+<p>Open a new file called <code>hello_world.script</code> and edit it like this:</p>
+<pre><code class="lang-sh"><span class="hljs-shebang">#!/bin/sh</span>
+<span class="hljs-comment">#SBATCH -J MPI_HELLO</span>
+<span class="hljs-comment">#SBATCH -o MPI_HELLO.%J.stdout</span>
+<span class="hljs-comment">#SBATCH -e MPI_HELLO.%J.stderr</span>
+<span class="hljs-comment">#SBATCH -p development</span>
+<span class="hljs-comment">#SBATCH -N 2</span>
+<span class="hljs-comment">#SBATCH -t 00:10:00</span>
+module load openmpi
+<span class="hljs-built_in">cd</span> <span class="hljs-variable">$HOME</span>/mpi_hello
+mpicc mpi_hello_world.c -o mpi_hello_world
+mpirun -n <span class="hljs-number">48</span> ./mpi_hello_world
+</code></pre>
+<p>The follows are the brief explanations about the lines.</p>
+<ul>
+<li><code>#SBATCH -J MPI_HELLO</code> --&gt; Name this job as <code>MPI_HELLO</code>.</li>
+<li><code>#SBATCH -o MPI_HELLO.%J.stdout</code> --&gt; Output standard output to the file
+<code>MPI_HELLO.%J.stdout</code>. <code>%J</code> is job ID.</li>
+<li><code>#SBATCH -e MPI_HELLO.%J.stderr</code> --&gt; Output standard error to the file
+<code>MPI_HELLO.%J.stderr</code>.</li>
+<li><code>#SBATCH -p development</code> --&gt; Use <code>development</code> partition. The idea of SLURM&apos;s partition
+is the same as PBS&apos;s queue.</li>
+<li><code>#SBATCH -N 2</code> --&gt; Use 2 nodes.</li>
+<li><code>#SBATCH -t 00:10:00</code> --&gt; Walltime is 10 minutes.</li>
+<li><code>module load openmpi</code> --&gt; Load OpenMPI.</li>
+<li><code>cd $HOME/mpi_hello</code> --&gt; Change directory to <code>$HOME/mpi_hello</code>.</li>
+<li><code>mpicc mpi_hello_world.c -o mpi_hello_world</code> --&gt; Compile <code>mpi_hello_world.c</code> and save
+the binary file as <code>mpi_hello_world</code>.</li>
+<li><code>mpirun -n 48 ./mpi_hello_world</code> - Eexecute it with 48 cores. Each node has 24 cores,
+so the total becomes 48.</li>
+</ul>
+<h3 id="run-your-job">Run your job</h3>
+<p>Running a job is like this:</p>
+<pre><code class="lang-bash">module load openmpi
+sbatch hello_world.script
+</code></pre>
+<p>You can check your job status with:</p>
+<pre><code class="lang-bash">squeue
+</code></pre>
+<p>Once the job is done, you have two files, <code>MPI_HELLO.&lt;job id&gt;.stdout</code> and <code>MPI_HELLO.&lt;job id&gt;.stderr</code>, so
+take a look at the files like this:</p>
+<pre><code class="lang-bash">less MPI_HELLO.&lt;job id&gt;.stdout
+less MPI_HELLO.&lt;job id&gt;.stderr
+</code></pre>
 
                     
                     </section>
