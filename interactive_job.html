@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>System Access | RDI2 / ELF1 Cluster</title>
+        <title>Using Nodes Interactively | RDI2 / ELF1 Cluster</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.5">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="./running_a_job.html" />
+    <link rel="next" href="./technical_support.html" />
     
     
-    <link rel="prev" href="./index.html" />
+    <link rel="prev" href="./running_a_job.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="1"
-        data-chapter-title="System Access"
-        data-filepath="system_access.md"
+        data-level="3"
+        data-chapter-title="Using Nodes Interactively"
+        data-filepath="interactive_job.md"
         data-basepath="."
         data-revision="Wed Jan 06 2016 02:01:38 GMT-0500 (EST)"
         data-innerlanguage="">
@@ -82,7 +82,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1" data-path="system_access.html">
+        <li class="chapter " data-level="1" data-path="system_access.html">
             
                 
                     <a href="./system_access.html">
@@ -112,7 +112,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3" data-path="interactive_job.html">
+        <li class="chapter active" data-level="3" data-path="interactive_job.html">
             
                 
                     <a href="./interactive_job.html">
@@ -175,10 +175,20 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="system-access">System Access</h1>
-<p>Once you get the notice of your account activation, you should be able to login to ELF1 with this;</p>
-<pre><code>ssh &lt;netid&gt;@elf.rdi2.rutgers.edu
+                        <h1 id="using-nodes-interactively">Using Nodes Interactively</h1>
+<p>=============================</p>
+<p>You can get access to the SLURM compute nodes interactively.</p>
+<p>Get the job allocation(e.g. 2 nodes):</p>
+<pre><code class="lang-bash">salloc -N <span class="hljs-number">2</span> bash
 </code></pre>
+<p>Check the list of the allocated nodes:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$SLURM_JOB_NODELIST</span>
+</code></pre>
+<p>Now, you should be able to ssh to one of the nodes(e.g. e1c024):</p>
+<pre><code class="lang-bash">ssh e1c024
+</code></pre>
+<p>You should be able to ssh back and forth between the allocated compute nodes.</p>
+
                     
                     </section>
                 
@@ -188,10 +198,10 @@
         </div>
 
         
-        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: RDI2 / ELF1 Cluster"><i class="fa fa-angle-left"></i></a>
+        <a href="./running_a_job.html" class="navigation navigation-prev " aria-label="Previous page: Running A Job"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./running_a_job.html" class="navigation navigation-next " aria-label="Next page: Running A Job"><i class="fa fa-angle-right"></i></a>
+        <a href="./technical_support.html" class="navigation navigation-next " aria-label="Next page: Technical Support"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
