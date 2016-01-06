@@ -1,4 +1,4 @@
-# Using Nodes Interactively
+# Using Compute Nodes Interactively
 
 You can get access to the SLURM compute nodes interactively.
 
@@ -20,4 +20,12 @@ Now, you should be able to ssh to one of the nodes(e.g. e1c024):
 ssh e1c024
 ```
 
-You should be able to ssh back and forth between the allocated compute nodes.
+And also, you should be able to ssh back and forth between the allocated compute nodes.
+
+When you want to finish the allocation, you just need to execute `exit`, and you should
+get the message like this:
+
+```bash
+salloc: Relinquishing job allocation 103
+salloc: Job allocation 103 has been revoked.
+```
