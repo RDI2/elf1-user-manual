@@ -53,7 +53,7 @@
         data-chapter-title="Using Nodes Interactively"
         data-filepath="interactive_job.md"
         data-basepath="."
-        data-revision="Wed Jan 06 2016 02:04:27 GMT-0500 (EST)"
+        data-revision="Wed Jan 06 2016 08:45:35 GMT-0500 (EST)"
         data-innerlanguage="">
     
 
@@ -175,7 +175,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="using-nodes-interactively">Using Nodes Interactively</h1>
+                        <h1 id="using-compute-nodes-interactively">Using Compute Nodes Interactively</h1>
 <p>You can get access to the SLURM compute nodes interactively.</p>
 <p>Get the job allocation(e.g. 2 nodes):</p>
 <pre><code class="lang-bash">salloc -N <span class="hljs-number">2</span> bash
@@ -186,7 +186,12 @@
 <p>Now, you should be able to ssh to one of the nodes(e.g. e1c024):</p>
 <pre><code class="lang-bash">ssh e1c024
 </code></pre>
-<p>You should be able to ssh back and forth between the allocated compute nodes.</p>
+<p>And also, you should be able to ssh back and forth between the allocated compute nodes.</p>
+<p>When you want to finish the allocation, you just need to execute <code>exit</code>, and you should
+get the message like this:</p>
+<pre><code class="lang-bash">salloc: Relinquishing job allocation <span class="hljs-number">103</span>
+salloc: Job allocation <span class="hljs-number">103</span> has been revoked.
+</code></pre>
 
                     
                     </section>
