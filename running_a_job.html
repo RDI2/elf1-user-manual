@@ -53,7 +53,7 @@
         data-chapter-title="Running A Job"
         data-filepath="running_a_job.md"
         data-basepath="."
-        data-revision="Wed Jan 06 2016 02:04:27 GMT-0500 (EST)"
+        data-revision="Fri Jan 08 2016 00:53:38 GMT-0500 (EST)"
         data-innerlanguage="">
     
 
@@ -214,7 +214,7 @@ a mpi program to executing it on SLURM compute nodes.</p>
 }
 </code></pre>
 <h3 id="write-your-job-script">Write your job script</h3>
-<p>Open a new file called <code>hello_world.script</code>, and edit it like this:</p>
+<p>Open a new file called <code>mpi_hello.script</code>, and edit it like this:</p>
 <pre><code class="lang-sh"><span class="hljs-shebang">#!/bin/sh</span>
 <span class="hljs-comment">#SBATCH -J MPI_HELLO</span>
 <span class="hljs-comment">#SBATCH -o MPI_HELLO.%J.stdout</span>
@@ -247,8 +247,7 @@ so the total becomes 48.</li>
 </ul>
 <h3 id="run-your-first-job">Run your first job</h3>
 <p>Running a job is like this:</p>
-<pre><code class="lang-bash">module load openmpi
-sbatch hello_world.script
+<pre><code class="lang-bash">sbatch mpi_hello.script
 </code></pre>
 <p>You can check your job status with:</p>
 <pre><code class="lang-bash">squeue
