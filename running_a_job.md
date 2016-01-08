@@ -46,8 +46,7 @@ int main(int argc, char** argv) {
 ```
 
 ### Write your job script
-
-Open a new file called `hello_world.script`, and edit it like this:
+Open a new file called `mpi_hello.script`, and edit it like this:
 
 ```sh
 #!/bin/sh
@@ -86,8 +85,7 @@ The follows are the brief explanations about the lines.
 Running a job is like this:
 
 ```bash
-module load openmpi
-sbatch hello_world.script
+sbatch mpi_hello.script
 ```
 
 You can check your job status with:
