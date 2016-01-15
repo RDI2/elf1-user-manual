@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Using Nodes Interactively | RDI2 / ELF1 Cluster</title>
+        <title>Using Nodes Interactively | RDI2 / ELF1 User Manual</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.5">
@@ -37,7 +37,7 @@
         
     
     
-    <link rel="next" href="./technical_support.html" />
+    <link rel="next" href="./using_modules.html" />
     
     
     <link rel="prev" href="./running_a_job.html" />
@@ -53,7 +53,7 @@
         data-chapter-title="Using Nodes Interactively"
         data-filepath="interactive_job.md"
         data-basepath="."
-        data-revision="Fri Jan 15 2016 09:52:50 GMT-0500 (EST)"
+        data-revision="Fri Jan 15 2016 18:30:45 GMT-0500 (EST)"
         data-innerlanguage="">
     
 
@@ -76,7 +76,7 @@
                 
                         <i class="fa fa-check"></i>
                         
-                        RDI2 / ELF1 Cluster
+                        RDI2 / ELF1 User Manual
                     </a>
             
             
@@ -127,14 +127,29 @@
             
         </li>
     
-        <li class="chapter " data-level="4" data-path="technical_support.html">
+        <li class="chapter " data-level="4" data-path="using_modules.html">
+            
+                
+                    <a href="./using_modules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Using Environment Modules
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="technical_support.html">
             
                 
                     <a href="./technical_support.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>4.</b>
+                            <b>5.</b>
                         
                         Technical Support
                     </a>
@@ -165,7 +180,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >RDI2 / ELF1 Cluster</a>
+        <a href="./" >RDI2 / ELF1 User Manual</a>
     </h1>
 </div>
 
@@ -181,7 +196,12 @@
 <pre><code class="lang-bash">salloc -N <span class="hljs-number">2</span> bash
 </code></pre>
 <p>Check the list of the allocated nodes:</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$SLURM_JOB_NODELIST</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># simple way 1</span>
+squeue
+<span class="hljs-comment"># simple way 2</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$SLURM_JOB_NODELIST</span>
+<span class="hljs-comment"># useful way in a script</span>
+scontrol show hostname <span class="hljs-variable">$SLURM_JOB_NODELIST</span>
 </code></pre>
 <p>Now, you should be able to ssh to one of the nodes(e.g. e1c024):</p>
 <pre><code class="lang-bash">ssh e1c024
@@ -205,7 +225,7 @@ salloc: Job allocation <span class="hljs-number">103</span> has been revoked.
         <a href="./running_a_job.html" class="navigation navigation-prev " aria-label="Previous page: Running A Job"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./technical_support.html" class="navigation navigation-next " aria-label="Next page: Technical Support"><i class="fa fa-angle-right"></i></a>
+        <a href="./using_modules.html" class="navigation navigation-next " aria-label="Next page: Using Environment Modules"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

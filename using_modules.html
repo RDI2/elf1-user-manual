@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>System Access | RDI2 / ELF1 User Manual</title>
+        <title>Using Environment Modules | RDI2 / ELF1 User Manual</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.5">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="./running_a_job.html" />
+    <link rel="next" href="./technical_support.html" />
     
     
-    <link rel="prev" href="./index.html" />
+    <link rel="prev" href="./interactive_job.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="1"
-        data-chapter-title="System Access"
-        data-filepath="system_access.md"
+        data-level="4"
+        data-chapter-title="Using Environment Modules"
+        data-filepath="using_modules.md"
         data-basepath="."
         data-revision="Fri Jan 15 2016 18:30:45 GMT-0500 (EST)"
         data-innerlanguage="">
@@ -82,7 +82,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1" data-path="system_access.html">
+        <li class="chapter " data-level="1" data-path="system_access.html">
             
                 
                     <a href="./system_access.html">
@@ -127,7 +127,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4" data-path="using_modules.html">
+        <li class="chapter active" data-level="4" data-path="using_modules.html">
             
                 
                     <a href="./using_modules.html">
@@ -190,9 +190,15 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="system-access">System Access</h1>
-<p>Once you get the notice of your account activation, you should be able to login to ELF1 with this;</p>
-<pre><code>ssh &lt;netid&gt;@elf-login1.rdi2.rutgers.edu
+                        <h1 id="using-environment-moduleslmod">Using Environment Modules(Lmod)</h1>
+<p>To check available modules:</p>
+<pre><code>module avail
+</code></pre><p>To load module(e.g. openmpi/1.10.1):</p>
+<pre><code>module load openmpi/1.10.1
+</code></pre><p>To check loaded modules:</p>
+<pre><code>module list
+</code></pre><p>To unload module(e.g. openmpi/1.10.1):</p>
+<pre><code>module unload openmpi/1.10.1
 </code></pre>
                     
                     </section>
@@ -203,10 +209,10 @@
         </div>
 
         
-        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: RDI2 / ELF1 User Manual"><i class="fa fa-angle-left"></i></a>
+        <a href="./interactive_job.html" class="navigation navigation-prev " aria-label="Previous page: Using Nodes Interactively"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./running_a_job.html" class="navigation navigation-next " aria-label="Next page: Running A Job"><i class="fa fa-angle-right"></i></a>
+        <a href="./technical_support.html" class="navigation navigation-next " aria-label="Next page: Technical Support"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
