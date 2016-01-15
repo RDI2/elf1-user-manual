@@ -11,7 +11,12 @@ salloc -N 2 bash
 Check the list of the allocated nodes:
 
 ```bash
+# simple way 1
+squeue
+# simple way 2
 echo $SLURM_JOB_NODELIST
+# useful way in a script
+scontrol show hostname $SLURM_JOB_NODELIST
 ```
 
 Now, you should be able to ssh to one of the nodes(e.g. e1c024):
