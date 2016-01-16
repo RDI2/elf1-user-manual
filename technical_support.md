@@ -1,3 +1,3 @@
 # Technical Support
 
-When you need a technical support, please send a message to kt413[at]rdi2.rutgers.edu ([at]=@).
+When you need a technical support, please send a message to elf-help[at]rdi2.rutgers.edu ([at]=@).
