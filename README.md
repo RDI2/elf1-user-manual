@@ -1,9 +1,13 @@
 # RDI2 / ELF1 User Manual
 
+Plans
+-----
+- **[1/19-20]** Setup multiple login nodes.
+- **[1/20-21]** Install gcc/5.3.0,4.9.3
+
 News
 ----
-- **[1/15-19/2016]** We will perform GPFS maintenance. The ELF1 cluster will be
-  offline during the maintenance.
+- **[1/19/2016]** Now we have /project1, /scratch, /staging on GPFS.
 - **[1/13/2016]** Gromacs/5.1.1 is available by `module load gromacs`.
 - **[1/12/2016]** Anaconda/2-2.4.1 is available by `module load anaconda`.
 
