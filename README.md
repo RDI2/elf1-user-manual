@@ -2,15 +2,19 @@
 
 Plans
 -----
-- **[1/20-21]** Install gcc/5.3.0,4.9.3
+- **[1/22-25]** Install CUDA 7.5.
+- **[1/22-25]** Install AmberTools15.
 
 News
 ----
-- **[1/20]** Finished setting up three login nodes. Now you can login to the cluster
+- **[1/21/2016]** OpenMPI 1.6.5 is avalble.
+- **[1/21/2016]** gcc/5.3.0 and 4.9.3 are available.
+- **[1/20/2016]** Finished setting up three login nodes. Now you can login to the cluster
   by `ssh <netid>@elf.rdi2.rutgers.edu`.
 - **[1/19/2016]** Now we have /project1, /scratch, /staging on GPFS.
 - **[1/13/2016]** Gromacs/5.1.1 is available by `module load gromacs`.
 - **[1/12/2016]** Anaconda/2-2.4.1 is available by `module load anaconda`.
+- **[1/08/2016]** OpenMPI 1.10.1 is available.
 
 Index
 -----
