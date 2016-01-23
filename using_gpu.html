@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Technical Support | RDI2 / ELF1 User Manual</title>
+        <title>Using GPU/CUDA | RDI2 / ELF1 User Manual</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.5">
@@ -37,8 +37,10 @@
         
     
     
+    <link rel="next" href="./technical_support.html" />
     
-    <link rel="prev" href="./using_gpu.html" />
+    
+    <link rel="prev" href="./using_modules.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="6"
-        data-chapter-title="Technical Support"
-        data-filepath="technical_support.md"
+        data-level="5"
+        data-chapter-title="Using GPU/CUDA"
+        data-filepath="using_gpu.md"
         data-basepath="."
         data-revision="Fri Jan 22 2016 20:24:16 GMT-0500 (EST)"
         data-innerlanguage="">
@@ -140,7 +142,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5" data-path="using_gpu.html">
+        <li class="chapter active" data-level="5" data-path="using_gpu.html">
             
                 
                     <a href="./using_gpu.html">
@@ -155,7 +157,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="technical_support.html">
+        <li class="chapter " data-level="6" data-path="technical_support.html">
             
                 
                     <a href="./technical_support.html">
@@ -203,8 +205,17 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="technical-support">Technical Support</h1>
-<p>When you have a question/problem, please send a message to elf-help[at]rdi2.rutgers.edu ([at]=@).</p>
+                        <h1 id="using-gpucuda">Using GPU/CUDA</h1>
+<p>GPU/CUDA is available. Here&apos;s an example on how to use it in interactive mode.</p>
+<p><strong>Step 1.</strong> Obtain a GPU node:</p>
+<pre><code>salloc -N 1 -p gpu bash
+</code></pre><p><strong>Step 2.</strong> Check hostname of your node:</p>
+<pre><code>squeue
+</code></pre><p><strong>Step 3.</strong> Login to your node(e.g. e1c129):</p>
+<pre><code>ssh e1c129
+</code></pre><p><strong>Step 4.</strong> Load cuda:</p>
+<pre><code>module load cuda
+</code></pre><p>Now you should be able to use CUDA.</p>
 
                     
                     </section>
@@ -215,8 +226,10 @@
         </div>
 
         
-        <a href="./using_gpu.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Using GPU/CUDA"><i class="fa fa-angle-left"></i></a>
+        <a href="./using_modules.html" class="navigation navigation-prev " aria-label="Previous page: Using Environment Modules"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="./technical_support.html" class="navigation navigation-next " aria-label="Next page: Technical Support"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
