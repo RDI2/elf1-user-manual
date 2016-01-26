@@ -2,7 +2,11 @@
 
 Plans
 -----
-- **[1/22-25]** Install AmberTools15.
+- **[1/27-29]** Rebuild Gromacs with AVX2_256 support.
+- **[1/27-29]** Install binutils 2.26.
+- **[1/27-28]** Install GSL 2.1.
+- **[1/26-27]** Install ORCA 3.0.3.
+- **[1/22-25]** Install AmberTools15. (Installed on some nodes and tested, but not completed.)
 
 News
 ----
