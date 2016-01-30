@@ -3,9 +3,9 @@
 Plans
 -----
 
-- **[1/27-29]** Rebuild Gromacs with AVX2_256 support.
-- **[1/27-29]** Install binutils 2.26.
-- **[1/22-25]** Install AmberTools15. (Installed on some nodes and tested, but not completed.)
+- **[1/27-31]** Rebuild Gromacs with AVX2_256 support.
+- **[1/27-31]** Install binutils 2.26.
+- **[1/22-31]** Install AmberTools15. (Installed on some nodes and tested, but not completed.)
 
 News
 ----
