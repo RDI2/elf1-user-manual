@@ -2,14 +2,16 @@
 
 Plans
 -----
+
 - **[1/27-29]** Rebuild Gromacs with AVX2_256 support.
 - **[1/27-29]** Install binutils 2.26.
-- **[1/27-28]** Install GSL 2.1.
-- **[1/26-27]** Install ORCA 3.0.3.
 - **[1/22-25]** Install AmberTools15. (Installed on some nodes and tested, but not completed.)
 
 News
 ----
+
+- **[1/29/2016]** GSL 2.1 is available.
+- **[1/29/2016]** ORCA 3.0.3 is available.
 - **[1/22/2016]** CUDA 7.5 is available. Read ["Using GPU/CUDA"](using_gpu.md).
 - **[1/21/2016]** OpenMPI 1.6.5 is avalble.
 - **[1/21/2016]** gcc/5.3.0 and 4.9.3 are available.
@@ -22,6 +24,7 @@ News
 
 Index
 -----
+
 1. [System Access](system_access.md)
 2. [Running A Job](running_a_job.md)
 3. [Using Compute Nodes Interactively](interactive_job.md)
