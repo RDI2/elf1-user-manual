@@ -3,13 +3,13 @@
 Plans
 -----
 
-- **[1/27-31]** Rebuild Gromacs with AVX2_256 support.
-- **[1/27-31]** Install binutils 2.26.
-- **[1/22-31]** Install AmberTools15. (Installed on some nodes and tested, but not completed.)
+- **[1/27-2/2]** Rebuild Gromacs with AVX2_256 support.
+- **[1/27-2/2]** Install binutils 2.26.
 
 News
 ----
 
+- **[1/31/2016]** AmberTools15 is available.
 - **[1/29/2016]** GSL 2.1 is available.
 - **[1/29/2016]** ORCA 3.0.3 is available.
 - **[1/22/2016]** CUDA 7.5 is available. Read ["Using GPU/CUDA"](using_gpu.md).
