@@ -3,18 +3,19 @@
 Plans
 -----
 
-- **[1/27-2/2]** Rebuild Gromacs with AVX2_256 support.
-- **[1/27-2/2]** Install binutils 2.26.
+
 
 News
 ----
 
+- **[2/2/2016]** Gromacs has been rebuilt with AVX2_256.
+- **[2/2/2016]** binutils 2.26 is available.
 - **[1/31/2016]** AmberTools15 is available.
 - **[1/29/2016]** GSL 2.1 is available.
 - **[1/29/2016]** ORCA 3.0.3 is available.
 - **[1/22/2016]** CUDA 7.5 is available. Read ["Using GPU/CUDA"](using_gpu.md).
 - **[1/21/2016]** OpenMPI 1.6.5 is avalble.
-- **[1/21/2016]** gcc/5.3.0 and 4.9.3 are available.
+- **[1/21/2016]** gcc 5.3.0 and 4.9.3 are available.
 - **[1/20/2016]** Finished setting up three login nodes. Now you can login to the cluster
   by `ssh <netid>@elf.rdi2.rutgers.edu`.
 - **[1/19/2016]** Now we have /project1, /scratch, /staging on GPFS.
