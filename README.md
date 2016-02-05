@@ -3,7 +3,8 @@
 Plans
 -----
 
-TBD.
+- **[2/9]** Install MPICH 3.2
+- **[2/9]** Install Java SE Development Kit 8.
 
 News
 ----
