@@ -3,12 +3,12 @@
 Plans
 -----
 
-- **[2/9]** Install MPICH 3.2
-- **[2/9]** Install Java SE Development Kit 8.
+- **[2/23]** Install Java SE Development Kit 8.
 
 News
 ----
 
+- **[2/10/2016]** MPICH 3.2 is available.
 - **[2/2/2016]** Gromacs has been rebuilt with AVX2_256.
 - **[2/2/2016]** binutils 2.26 is available.
 - **[1/31/2016]** AmberTools15 is available.
