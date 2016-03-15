@@ -53,7 +53,7 @@
         data-chapter-title="Running A Job"
         data-filepath="running_a_job.md"
         data-basepath="."
-        data-revision="Thu Mar 03 2016 14:42:12 GMT-0500 (EST)"
+        data-revision="Tue Mar 15 2016 17:47:05 GMT-0400 (EDT)"
         data-innerlanguage="">
     
 
@@ -206,7 +206,7 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="running-a-job">Running A Job</h1>
-<p>This section explains how to run a job by showing an example from making
+<p>This section explains how to run a job on by showing an example from making
 a mpi program to executing it on SLURM compute nodes.</p>
 <h3 id="write-your-first-mpi-program-hello-world">Write your first mpi program &quot;Hello World!&quot;</h3>
 <p>First of all, create your work directory:</p>
@@ -252,14 +252,15 @@ a mpi program to executing it on SLURM compute nodes.</p>
 <span class="hljs-comment">#SBATCH -p development</span>
 <span class="hljs-comment">#SBATCH -N 2</span>
 <span class="hljs-comment">#SBATCH -t 00:10:00</span>
+
 module load openmpi
 <span class="hljs-built_in">cd</span> <span class="hljs-variable">$HOME</span>/mpi_hello
 mpicc mpi_hello_world.c -o mpi_hello_world
 mpirun -n <span class="hljs-number">48</span> ./mpi_hello_world
 </code></pre>
-<p>The follows are the brief explanations about the lines.</p>
+<p>The follows are the brief explanations about the job script.</p>
 <ul>
-<li><code>#SBATCH -J MPI_HELLO</code> --&gt; Name this job as <code>MPI_HELLO</code>.</li>
+<li><code>#SBATCH -J MPI_HELLO</code> --&gt; Set up the name of the job as <code>MPI_HELLO</code>.</li>
 <li><code>#SBATCH -o MPI_HELLO.%J.stdout</code> --&gt; Output standard output to the file
 <code>MPI_HELLO.%J.stdout</code>. <code>%J</code> is job ID.</li>
 <li><code>#SBATCH -e MPI_HELLO.%J.stderr</code> --&gt; Output standard error to the file
@@ -275,7 +276,11 @@ the binary file as <code>mpi_hello_world</code>.</li>
 <li><code>mpirun -n 48 ./mpi_hello_world</code> - Eexecute it with 48 cores. Each node has 24 cores,
 so the total becomes 48.</li>
 </ul>
-<h3 id="run-your-first-job">Run your first job</h3>
+<p><strong>NOTE:</strong> If you&apos;d like to receive email notification, add the following lines
+on the script.</p>
+<pre><code>#SBATCH --mail-type=FAIL,BEGIN,END
+#SBATCH --mail-user=&lt;your_email_address&gt;
+</code></pre><h3 id="run-your-first-job">Run your first job</h3>
 <p>Running a job is like this:</p>
 <pre><code class="lang-bash">sbatch mpi_hello.script
 </code></pre>
