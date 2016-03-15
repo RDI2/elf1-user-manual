@@ -1,6 +1,6 @@
 # Running A Job
 
-This section explains how to run a job by showing an example from making
+This section explains how to run a job on by showing an example from making
 a mpi program to executing it on SLURM compute nodes.
 
 ### Write your first mpi program "Hello World!"
@@ -56,15 +56,16 @@ Open a new file called `mpi_hello.script`, and edit it like this:
 #SBATCH -p development
 #SBATCH -N 2
 #SBATCH -t 00:10:00
+
 module load openmpi
 cd $HOME/mpi_hello
 mpicc mpi_hello_world.c -o mpi_hello_world
 mpirun -n 48 ./mpi_hello_world
 ```
 
-The follows are the brief explanations about the lines.
+The follows are the brief explanations about the job script.
 
-- `#SBATCH -J MPI_HELLO` --> Name this job as `MPI_HELLO`.
+- `#SBATCH -J MPI_HELLO` --> Set up the name of the job as `MPI_HELLO`.
 - `#SBATCH -o MPI_HELLO.%J.stdout` --> Output standard output to the file
   `MPI_HELLO.%J.stdout`. `%J` is job ID.
 - `#SBATCH -e MPI_HELLO.%J.stderr` --> Output standard error to the file
@@ -79,6 +80,14 @@ The follows are the brief explanations about the lines.
   the binary file as `mpi_hello_world`.
 - `mpirun -n 48 ./mpi_hello_world` - Eexecute it with 48 cores. Each node has 24 cores,
   so the total becomes 48.
+
+**NOTE:** If you'd like to receive email notification, add the following lines
+on the script.
+
+```
+#SBATCH --mail-type=FAIL,BEGIN,END
+#SBATCH --mail-user=<your_email_address>
+```
 
 ### Run your first job
 

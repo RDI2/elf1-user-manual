@@ -3,12 +3,11 @@
 Plans
 -----
 
-- **[3/11]** Fix hardware issue on 004,031,054-055,057,083,110-112
-- **[3/11]** Setup CPU temperature monitor.
 
 News
 ----
 
+- **[3/11/2016]** Setup CPU temperature monitor.
 - **[3/3/2016]** Oracle Java SE Development Kit 8 is available by `module load jdk`.
 - **[2/10/2016]** MPICH 3.2 is available.
 - **[2/2/2016]** Gromacs has been rebuilt with AVX2_256.
