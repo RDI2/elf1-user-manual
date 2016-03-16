@@ -1,13 +1,9 @@
 # RDI2 / ELF1 User Manual
 
-Plans
------
-
-
 News
 ----
 
-- **[3/11/2016]** Setup CPU temperature monitor.
+- **[3/11/2016]** Installed CPU temperature monitor.
 - **[3/3/2016]** Oracle Java SE Development Kit 8 is available by `module load jdk`.
 - **[2/10/2016]** MPICH 3.2 is available.
 - **[2/2/2016]** Gromacs has been rebuilt with AVX2_256.
