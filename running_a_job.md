@@ -1,6 +1,6 @@
 # Running A Job
 
-This section explains how to run a job on by showing an example from making
+This section explains how to run a job by showing an example from making
 a mpi program to executing it on SLURM compute nodes.
 
 ### Write your first mpi program "Hello World!"
