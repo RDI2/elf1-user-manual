@@ -53,7 +53,7 @@
         data-chapter-title="System Access"
         data-filepath="system_access.md"
         data-basepath="."
-        data-revision="Mon Mar 21 2016 15:55:01 GMT-0400 (EDT)"
+        data-revision="Mon Mar 21 2016 16:42:34 GMT-0400 (EDT)"
         data-innerlanguage="">
     
 
@@ -206,9 +206,47 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="system-access">System Access</h1>
-<p>Once you get the notice of your account activation, you should be able to login to ELF1 with this;</p>
+<h2 id="using-netid-and-password">Using NetID and Password</h2>
+<p>Once you get the notice of your account activation, you should be able to login to ELF1 with your
+netid and password like this;</p>
 <pre><code>ssh &lt;netid&gt;@elf.rdi2.rutgers.edu
-</code></pre>
+</code></pre><h2 id="optional-setup-ssh-key-authentication">(Optional) Setup SSH Key Authentication</h2>
+<p>SSH Key Authentication is a more secure and useful approach than password authentication.
+If you haven&apos;t had a SSH public/private key pair, here&apos;s how to create it and setup the
+SSH Key Authentication.</p>
+<h3 id="for-linux-and-mac-os-x">For Linux and Mac OS X</h3>
+<p><strong>Step 1.</strong> Generate the pair at your local machine with this command:</p>
+<pre><code>local$ ssh-keygen
+</code></pre><p>We highly recommend setting up the passphrase and save the passphrase on your KeyChain,
+but you can also skip entering the passphrase(Not recommended).</p>
+<p>You should have your key pair in <code>~/.ssh</code>:</p>
+<pre><code>local$ ls -la ~/.ssh
+</code></pre><p><strong>Step 2.</strong> Take a look at your public key <code>~/.ssh/id_rsa.pub</code>, and copy the content:</p>
+<pre><code>local$ cat ~/.ssh/id_rsa.pub
+</code></pre><p><strong>Step 3.</strong> Login to ELF1 and create <code>~/.ssh</code> directory and make it secure by changing the mode to
+700.</p>
+<pre><code>elf1$ mkdir ~/.ssh
+elf1$ chmod 700 ~/.ssh
+</code></pre><p><strong>Step 4.</strong> Open a new file <code>~/.ssh/authorized_keys</code> with the <code>vim</code> editor, and enter input mode by
+pushing <code>i</code> key. Then, paste the public key.</p>
+<pre><code>vim ~/.ssh/authorized_keys
+</code></pre><p><strong>Step 5.</strong> Exit the input mode by pushing <code>ESC</code> key, and save and exit the editer by <code>:</code>,<code>q</code>, <code>w</code>
+and <code>Enter/Return</code> key.</p>
+<p><strong>Step 6.</strong> Change the mode of authorized_keys to 600:</p>
+<pre><code>chmod 600 ~/.ssh/authorized_keys
+</code></pre><p>Now you should be able to ssh to ELF1 by using the ssh key authentication.</p>
+<h3 id="for-windows">For Windows</h3>
+<p>Sorry, I don&apos;t have a Windows machine to write down the steps, so here&apos;s the link about
+how to set it up on PuTTY:</p>
+<ul>
+<li><a href="https://www.howtoforge.com/how-to-configure-ssh-keys-authentication-with-putty-and-linux-server-in-5-quick-steps" target="_blank">How To Configure SSH Keys Authentication With PuTTY And Linux Server In 5 Quick Steps</a></li>
+</ul>
+<p>Also, there&apos;re some nice Unix/Linux-like alternatives to PuTTY.</p>
+<ul>
+<li><a href="https://github.com/bmatzelle/gow" target="_blank">gow</a></li>
+<li><a href="https://www.cygwin.com/" target="_blank">Cygwin</a></li>
+</ul>
+
                     
                     </section>
                 
