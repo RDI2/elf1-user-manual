@@ -9,9 +9,9 @@ netid and password like this;
 
 ## (Optional) Setup SSH Key Authentication
 
-SSH Key Authentication is a more secure and useful approach than password authentication.
-If you haven't had a SSH public/private key pair, here's how to create it and setup the
-SSH Key Authentication.
+SSH Key Authentication is a more secure and useful approach of remote login than password
+authentication. If you haven't had a SSH public/private key pair, here's how to create it
+and setup the SSH Key Authentication.
 
 ### For Linux and Mac OS X
 
