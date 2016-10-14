@@ -9,4 +9,4 @@ Index
 4. [Using Environment Modules](using_modules.md)
 5. [Using GPU/CUDA](using_gpu.md)
 6. [Technical Support](technical_support.md)
-7. [System Overview](http://rdi2.rutgers.edu/elf-i)
+7. [System Overview](http://rdi2.rutgers.edu/elf)
