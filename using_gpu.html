@@ -5,10 +5,10 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Using GPU/CUDA | RDI2 / ELF1 User Manual</title>
+        <title>Using GPU/CUDA | RDI2 / ELF User Manual</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.5">
+        <meta name="generator" content="GitBook 2.6.7">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -53,7 +53,7 @@
         data-chapter-title="Using GPU/CUDA"
         data-filepath="using_gpu.md"
         data-basepath="."
-        data-revision="Mon Mar 21 2016 16:44:51 GMT-0400 (EDT)"
+        data-revision="Tue Nov 22 2016 16:29:37 GMT-0500 (EST)"
         data-innerlanguage="">
     
 
@@ -195,7 +195,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >RDI2 / ELF1 User Manual</a>
+        <a href="./" >RDI2 / ELF User Manual</a>
     </h1>
 </div>
 
@@ -206,9 +206,37 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="using-gpucuda">Using GPU/CUDA</h1>
-<p>GPU/CUDA is available. Here&apos;s an example on how to use it in interactive mode.</p>
+<h2 id="using-gpu-by-a-job-script">Using GPU by a job script.</h2>
+<p>To use GPU, you need to submit your job on the <code>gpu</code> partition, and reserve a gpu card by <code>#SBATCH --gres=gpu:1</code>, and load cuda module by <code>module load cuda</code>.</p>
+<p>The following is an example of job script.</p>
+<pre><code>#!/bin/sh
+#SBATCH -J CUDA_TEST
+#SBATCH -o CUDA_TEST.%J.stdout
+#SBATCH -e CUDA_TEST.%J.stderr
+#SBATCH -p gpu
+#SBATCH --gres=gpu:1
+#SBATCH -N 1
+#SBATCH -t 10:00
+
+sleep 3
+module load cuda
+
+#
+# Write your script bellow
+#
+echo ============== START ==============
+# just check Cuda version
+nvcc --version
+echo =============== END ===============
+sleep 3
+</code></pre><p>Then submit it by the <code>sbatch</code> command like this:</p>
+<pre><code>sbatch job.script
+</code></pre><blockquote>
+<p>NOTE: Replace <code>job.script</code> by the name of your job script file.</p>
+</blockquote>
+<h2 id="using-gpu-interactively">Using GPU interactively</h2>
 <p><strong>Step 1.</strong> Obtain a GPU node:</p>
-<pre><code>salloc -N 1 -p gpu bash
+<pre><code>salloc -N 1 -p gpu --gres=gpu:1 bash
 </code></pre><p><strong>Step 2.</strong> Check hostname of your node:</p>
 <pre><code>squeue
 </code></pre><p><strong>Step 3.</strong> Login to your node(e.g. e1c129):</p>
@@ -216,7 +244,8 @@
 </code></pre><p><strong>Step 4.</strong> Load cuda:</p>
 <pre><code>module load cuda
 </code></pre><p>Now you should be able to use CUDA.</p>
-
+<pre><code>nvcc --version
+</code></pre>
                     
                     </section>
                 
