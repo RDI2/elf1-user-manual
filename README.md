@@ -1,4 +1,4 @@
-# RDI2 / ELF1 User Manual
+# RDI2 / ELF User Manual
 
 Index
 -----
