@@ -1,4 +1,4 @@
-# Running An Array job
+# Running An Array Job
 
 When you want to submit a lot of serial jobs at once, Slurm's array option works well. Here's a simple example that reads each of 100 input files and outputs to result. Once you go through the steps you'll get a sense of how this `--array` option works.
 
