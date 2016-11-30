@@ -5,7 +5,13 @@
 Once you get the notice of your account activation, you should be able to login to ELF1 with your
 netid and password like this;
 
-    ssh <netid>@elf.rdi2.rutgers.edu
+```
+## Log in to ELF
+$ ssh <netid>@elf.rdi2.rutgers.edu
+
+## Log in to Caliburn
+$ ssh <netid>@caliburn.rdi2.rutgers.edu
+```
 
 ## (Optional) Setup SSH Key Authentication
 
@@ -39,15 +45,15 @@ local$ cat ~/.ssh/id_rsa.pub
 700.
 
 ```
-elf1$ mkdir ~/.ssh
-elf1$ chmod 700 ~/.ssh
+elf$ mkdir ~/.ssh
+elf$ chmod 700 ~/.ssh
 ```
 
 **Step 4.** Open a new file `~/.ssh/authorized_keys` with the `vim` editor, and enter input mode by
 pushing `i` key. Then, paste the public key.
 
 ```
-vim ~/.ssh/authorized_keys
+elf$ vim ~/.ssh/authorized_keys
 ```
 
 **Step 5.** Exit the input mode by pushing `ESC` key, and save and exit the editer by `:`,`q`, `w`
@@ -56,7 +62,7 @@ and `Enter/Return` key.
 **Step 6.** Change the mode of authorized_keys to 600:
 
 ```
-chmod 600 ~/.ssh/authorized_keys
+elf$ chmod 600 ~/.ssh/authorized_keys
 ```
 
 Now you should be able to ssh to ELF1 by using the ssh key authentication.
