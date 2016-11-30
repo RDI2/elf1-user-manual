@@ -10,7 +10,7 @@ mkdir my_array_job
 cd my_array_job
 
 # Create input files
-for a in $(seq 100); do echo "this is input from input$a" > input$a
+for a in $(seq 100); do echo "this is input from input$a" > input$a; done
 ```
 
 ## Write a job script
