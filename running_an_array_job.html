@@ -53,7 +53,7 @@
         data-chapter-title="Running An Array Job"
         data-filepath="running_an_array_job.md"
         data-basepath="."
-        data-revision="Wed Nov 30 2016 11:50:26 GMT-0500 (EST)"
+        data-revision="Wed Nov 30 2016 11:54:32 GMT-0500 (EST)"
         data-innerlanguage="">
     
 
@@ -245,8 +245,11 @@ NUM=$SLURM_ARRAY_TASK_ID
 cat input$NUM &gt; result$NUM
 </code></pre><h2 id="submit-the-job">Submit the job</h2>
 <pre><code>$ sbatch job.script
-</code></pre><h2 id="check-results">Check results</h2>
+</code></pre><h2 id="check-the-results">Check the results</h2>
 <pre><code>$ cat result1
+this is input from input1
+$ cat result50
+this is input from input50
 </code></pre>
                     
                     </section>
