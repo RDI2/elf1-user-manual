@@ -38,8 +38,11 @@ cat input$NUM > result$NUM
 $ sbatch job.script
 ```
 
-## Check results
+## Check the results
 
 ```
 $ cat result1
+this is input from input1
+$ cat result50
+this is input from input50
 ```
