@@ -53,7 +53,7 @@
         data-chapter-title="System Access"
         data-filepath="system_access.md"
         data-basepath="."
-        data-revision="Wed Nov 30 2016 11:54:53 GMT-0500 (EST)"
+        data-revision="Wed Nov 30 2016 15:05:32 GMT-0500 (EST)"
         data-innerlanguage="">
     
 
@@ -224,7 +224,11 @@
 <h2 id="using-netid-and-password">Using NetID and Password</h2>
 <p>Once you get the notice of your account activation, you should be able to login to ELF1 with your
 netid and password like this;</p>
-<pre><code>ssh &lt;netid&gt;@elf.rdi2.rutgers.edu
+<pre><code>## Log in to ELF
+$ ssh &lt;netid&gt;@elf.rdi2.rutgers.edu
+
+## Log in to Caliburn
+$ ssh &lt;netid&gt;@caliburn.rdi2.rutgers.edu
 </code></pre><h2 id="optional-setup-ssh-key-authentication">(Optional) Setup SSH Key Authentication</h2>
 <p>SSH Key Authentication is a more secure and useful approach of remote login than password
 authentication. If you haven&apos;t had a SSH public/private key pair, here&apos;s how to create it
@@ -240,15 +244,15 @@ but you can also skip entering the passphrase(Not recommended).</p>
 <pre><code>local$ cat ~/.ssh/id_rsa.pub
 </code></pre><p><strong>Step 3.</strong> Login to ELF1 and create <code>~/.ssh</code> directory and make it secure by changing the mode to
 700.</p>
-<pre><code>elf1$ mkdir ~/.ssh
-elf1$ chmod 700 ~/.ssh
+<pre><code>elf$ mkdir ~/.ssh
+elf$ chmod 700 ~/.ssh
 </code></pre><p><strong>Step 4.</strong> Open a new file <code>~/.ssh/authorized_keys</code> with the <code>vim</code> editor, and enter input mode by
 pushing <code>i</code> key. Then, paste the public key.</p>
-<pre><code>vim ~/.ssh/authorized_keys
+<pre><code>elf$ vim ~/.ssh/authorized_keys
 </code></pre><p><strong>Step 5.</strong> Exit the input mode by pushing <code>ESC</code> key, and save and exit the editer by <code>:</code>,<code>q</code>, <code>w</code>
 and <code>Enter/Return</code> key.</p>
 <p><strong>Step 6.</strong> Change the mode of authorized_keys to 600:</p>
-<pre><code>chmod 600 ~/.ssh/authorized_keys
+<pre><code>elf$ chmod 600 ~/.ssh/authorized_keys
 </code></pre><p>Now you should be able to ssh to ELF1 by using the ssh key authentication.</p>
 <h3 id="for-windows">For Windows</h3>
 <p>Sorry, I don&apos;t have a Windows machine to write down the steps, so here&apos;s the link about
