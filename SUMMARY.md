@@ -6,5 +6,5 @@
 * [Using Nodes Interactively](interactive_job.md)
 * [Using Environment Modules](using_modules.md)
 * [Using GPU/CUDA](using_gpu.md)
-* [Running an array job](running_an_array_job.md)
+* [Running An Array Job](running_an_array_job.md)
 * [Technical Support](technical_support.md)
