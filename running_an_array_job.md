@@ -6,11 +6,11 @@ When you want to submit a lot of serial jobs at once, Slurm's array option works
 
 ```
 # Create a work directory
-mkdir my_array_job
-cd my_array_job
+$ mkdir my_array_job
+$ cd my_array_job
 
 # Create input files
-for a in $(seq 100); do echo "this is input from input$a" > input$a; done
+$ for a in $(seq 100); do echo "this is input from input$a" > input$a; done
 ```
 
 ## Write a job script
