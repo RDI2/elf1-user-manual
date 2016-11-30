@@ -53,7 +53,7 @@
         data-chapter-title="Running An Array Job"
         data-filepath="running_an_array_job.md"
         data-basepath="."
-        data-revision="Wed Nov 30 2016 11:48:56 GMT-0500 (EST)"
+        data-revision="Wed Nov 30 2016 11:50:26 GMT-0500 (EST)"
         data-innerlanguage="">
     
 
@@ -228,7 +228,7 @@ mkdir my_array_job
 cd my_array_job
 
 # Create input files
-for a in $(seq 100); do echo &quot;this is input from input$a&quot; &gt; input$a
+for a in $(seq 100); do echo &quot;this is input from input$a&quot; &gt; input$a; done
 </code></pre><h2 id="write-a-job-script">Write a job script</h2>
 <p>Create a new file called <code>job.script</code> and edit it like this:</p>
 <pre><code>#!/bin/sh
